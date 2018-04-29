@@ -1,6 +1,6 @@
 # Weight Sensing
 
-A colloboration project with R&D and IT
+A collaboration project with R&D and IT
 
 ### Objective
 
