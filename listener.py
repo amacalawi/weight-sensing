@@ -13,20 +13,20 @@ def cleanAndExit():
 	print "Bye!"
 	sys.exit()
 
-hx = HX711(5, 6)
+hx1 = HX711(5, 6)
 hx2 = HX711(13, 26)
 hx3 = HX711(23, 24)
 
-hx.set_reading_format("LSB", "MSB")
+hx1.set_reading_format("LSB", "MSB")
 hx2.set_reading_format("LSB", "MSB")
 hx3.set_reading_format("LSB", "MSB")
 
-hx.set_reference_unit(21)
+hx1.set_reference_unit(21)
 hx2.set_reference_unit(21)
 hx3.set_reference_unit(21)
 
-hx.reset()
-hx.tare()
+hx1.reset()
+hx1.tare()
 hx2.reset()
 hx2.tare()
 hx3.reset()
@@ -47,7 +47,7 @@ while True:
 
 		if int(times)%5 == 0 :
 			if(status == 0):
-				message = { 'Text': messages , 'SMSC' : {'Location' : 1}, 'Number' : '09283164164' }
+				message = { 'Text': messages , 'SMSC' : {'Location' : 1}, 'Number' : '0928.......' }
 				smsd.InjectSMS([message])
 				print ("Panel1: %s , Panel2: %s , Panel3: %s ," %(val1,val2,val3))				
 				print "Message Sent"
@@ -55,8 +55,8 @@ while True:
 		else:	
 				status = 0
 
-		hx.power_down()
-		hx.power_up()
+		hx1.power_down()
+		hx1.power_up()
 		hx2.power_down()
 		hx2.power_up()
 		hx3.power_down()
